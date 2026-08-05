@@ -1,0 +1,78 @@
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pencatatan Keuangan Sederhana</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Pencatatan Keuangan</h1>
+      <p class="description">
+        Catat pemasukan dan pengeluaran harian menggunakan Vanilla JavaScript.
+      </p>
+
+      <section class="card summary">
+        <div class="summary-item">
+          <span>Saldo</span>
+          <strong id="balance">Rp0</strong>
+        </div>
+
+        <div class="summary-item">
+          <span>Pemasukan</span>
+          <strong id="total-income" class="income-text">Rp0</strong>
+        </div>
+
+        <div class="summary-item">
+          <span>Pengeluaran</span>
+          <strong id="total-expense" class="expense-text">Rp0</strong>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Tambah Transaksi</h2>
+
+        <form id="transaction-form">
+          <div>
+            <label for="description">Deskripsi</label>
+            <input
+              id="description"
+              type="text"
+              placeholder="Contoh: Gaji bulanan"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="amount">Nominal</label>
+            <input
+              id="amount"
+              type="number"
+              min="1"
+              placeholder="Contoh: 500000"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="type">Jenis Transaksi</label>
+            <select id="type">
+              <option value="income">Pemasukan</option>
+              <option value="expense">Pengeluaran</option>
+            </select>
+          </div>
+
+          <button type="submit">Tambah Transaksi</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Riwayat Transaksi</h2>
+        <ul id="transaction-list" class="transaction-list"></ul>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
